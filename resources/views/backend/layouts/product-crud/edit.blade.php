@@ -27,8 +27,6 @@
 
             <div class="mb-3">
                 <p><img width="50" src="{{ asset('storage/products/' . $products->image) }}" alt=""></p>
-                {{-- <label for="image" class="form-label">image</label>
-                <input name="image" type="file" class="form-control"> --}}
 
 
 

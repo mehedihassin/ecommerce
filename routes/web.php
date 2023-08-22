@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoriController;
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\HomeController as ControllersHomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
@@ -25,6 +27,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+// home crud rout
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/product_detail', [HomeController::class, 'Product_detail'])->name('product_detail');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -53,6 +59,8 @@ Route::group(['prefix'], function () {
     Route::post('/product-update/{id}', [ProductController::class, 'update'])->middleware('auth')->name('product_update');
     Route::get('/product-delete/{id}', [ProductController::class, 'delete'])->middleware('auth')->name('product_delete');
 });
+
+
 
 
 

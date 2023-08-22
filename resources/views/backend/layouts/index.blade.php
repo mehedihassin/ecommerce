@@ -10,6 +10,7 @@
                         <tr class=" table table-dark">
                             <th scope="col">#</th>
                             <th scope="col">Categori</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Action</th>
 
                         </tr>
@@ -22,6 +23,8 @@
                             <tr>
                                 <th scope="row">{{ $i++ }}</th>
                                 <td>{{ $categori->categori }}</td>
+                                <td><img width="50" src="{{ asset('storage/categoris/' . $categori->image) }}"
+                                        alt=""></td>
                                 <td>
 
                                     <a class="btn btn-sm btn-success"

@@ -13,8 +13,10 @@ class ProductController extends Controller
 {
     public function index()
     {
+
+
         $products = Product::all();
-        return view('backend.layouts.product-crud.index', compact('products'));
+        return view('backend.layouts.product-crud.index', compact('categoris', 'products'));
     }
 
     public function create()

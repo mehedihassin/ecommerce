@@ -13,6 +13,13 @@
                             value="{{ $categoris->categori }}">
                         <div id="categori" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
+                    <div class="mb-3">
+                        <p><img width="50" src="{{ asset('storage/categoris/' . $categoris->image) }}" alt="">
+                        </p>
+
+
+
+                    </div>
 
 
                     <button type="submit" class="btn btn-primary">Update</button>
