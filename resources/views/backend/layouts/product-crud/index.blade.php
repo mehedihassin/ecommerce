@@ -9,7 +9,10 @@
                     <thead>
                         <tr class=" table table-dark">
                             <th scope="col">#</th>
-                            <th scope="col">Categori</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Action</th>
 
                         </tr>
@@ -18,17 +21,27 @@
                         @php
                             $i = 1;
                         @endphp
+                        @foreach ($products as $product)
+                            <tr>
+                                <th scope="row">{{ $i++ }}</th>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td><img width="50" src="{{ asset('storage/products/' . $product->image) }}"
+                                        alt=""></td>
+                                <td>{{ $product->description }}</td>
 
-                        <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td>
+                                <td>
 
-                                <a class="btn btn-sm btn-success" href="">Edit</a>
-                                <a class="btn btn-sm btn-danger" href="">Delete</a>
-                            </td>
+                                    <a class="btn btn-sm btn-success"
+                                        href="{{ route('product_edit', $product->id) }}">Edit</a>
+                                    <a class="btn btn-sm btn-danger"
+                                        href="{{ route('product_delete', $product->id) }}">Delete</a>
+                                </td>
 
-                        </tr>
+                            </tr>
+                        @endforeach
+
+
 
 
 

@@ -48,6 +48,10 @@ Route::group(['prefix'], function () {
 Route::group(['prefix'], function () {
     Route::get('/product-index', [ProductController::class, 'index'])->middleware('auth')->name('product_index');
     Route::get('/product-create', [ProductController::class, 'create'])->middleware('auth')->name('product_create');
+    Route::post('/product-store', [ProductController::class, 'store'])->middleware('auth')->name('product_store');
+    Route::get('/product-edit/{id}', [ProductController::class, 'edit'])->middleware('auth')->name('product_edit');
+    Route::post('/product-update/{id}', [ProductController::class, 'update'])->middleware('auth')->name('product_update');
+    Route::get('/product-delete/{id}', [ProductController::class, 'delete'])->middleware('auth')->name('product_delete');
 });
 
 
