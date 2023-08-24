@@ -29,6 +29,12 @@
                         <input type="number" class="form-control" name="price" id="price" aria-describedby="price">
 
                     </div>
+                    <div class="mb-3">
+                        <label for="discount" class="form-label">Discount</label>
+                        <input type="number" class="form-control" name="discount" id="discount"
+                            aria-describedby="discount">
+
+                    </div>
 
                     <div class="mb-3">
                         <label for="image" class="form-label">image</label>
@@ -38,8 +44,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <input type="text" class="form-control" name="description" id="description"
-                            aria-describedby="description">
+                        <textarea type="text" class="form-control" name="description" id="description" aria-describedby="description"></textarea>
 
                     </div>
 

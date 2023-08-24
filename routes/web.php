@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\HomeController as ControllersHomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
@@ -27,10 +28,24 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 // home crud rout
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/home', [HomeController::class, 'home'])->name('home');
-Route::get('/product_detail', [HomeController::class, 'Product_detail'])->name('product_detail');
+Route::group(['prefix'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/home', [HomeController::class, 'home'])->name('home');
+    Route::get('/product_detail/{id}', [HomeController::class, 'Product_detail'])->name('product_detail');
+    Route::post('/add_to_cart/{id}', [HomeController::class, 'add_to_cart'])->name('add_to_cart');
+    Route::get('/show_cart', [HomeController::class, 'show_cart'])->name('show_cart');
+    Route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart'])->name('remove_cart');
+});
+Route::group(['prefix'], function () {
+
+    Route::get('/cash_delevery', [OrderController::class, 'cash_delevery'])->name('cash_delevery');
+});
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

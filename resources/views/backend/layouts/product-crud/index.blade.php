@@ -11,6 +11,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Discount</th>
                             <th scope="col">Image</th>
                             <th scope="col">Description</th>
                             <th scope="col">Action</th>
@@ -26,6 +27,7 @@
                                 <th scope="row">{{ $i++ }}</th>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>
+                                <td>{{ $product->discount }}</td>
                                 <td><img width="50" src="{{ asset('storage/products/' . $product->image) }}"
                                         alt=""></td>
                                 <td>{{ $product->description }}</td>

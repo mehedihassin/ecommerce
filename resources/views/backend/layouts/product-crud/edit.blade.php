@@ -24,6 +24,12 @@
                     value="{{ $products->price }}">
 
             </div>
+            <div class="mb-3">
+                <label for="discount" class="form-label">Discount</label>
+                <input type="number" class="form-control" name="discount" id="price" aria-describedby="discount"
+                    value="{{ $products->discount }}">
+
+            </div>
 
             <div class="mb-3">
                 <p><img width="50" src="{{ asset('storage/products/' . $products->image) }}" alt=""></p>

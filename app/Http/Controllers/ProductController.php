@@ -16,7 +16,7 @@ class ProductController extends Controller
 
 
         $products = Product::all();
-        return view('backend.layouts.product-crud.index', compact('categoris', 'products'));
+        return view('backend.layouts.product-crud.index', compact('products'));
     }
 
     public function create()
