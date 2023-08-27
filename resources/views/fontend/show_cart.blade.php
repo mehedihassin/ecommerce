@@ -28,10 +28,19 @@
 
 <body>
 
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            {{ session()->get('message') }}
+        </div>
+    @endif
+
     <div class="hero_area">
         <!-- header section strats -->
         @include('fontend.navber')
         <!-- end header section -->
+
+
 
 
         {{-- cart table is here --}}
@@ -96,13 +105,16 @@
                     <div class="text text-center mt-5">
                         <h4>Prceed to Order</h4>
                         <i class=" text-success fa-solid fa-truck"></i>
-                        <a href="{{ route('cash_delevery') }}" class="btn btn-sm btn-danger">Cash On Delevery</a>
+                        <a href="{{ route('cash_delevery') }}" class="btn btn-sm btn-danger">Cash On
+                            Delevery</a>
                         <i class="text-primary fa-solid fa-credit-card"></i>
-                        <a href="" class="btn btn-sm btn-danger">Pay Using Card</a>
+                        <a href="{{ route('stripe', ['totalPrice' => $totalPrice]) }}"
+                            class="btn btn-sm btn-danger">Pay Using Card</a>
                     </div>
                 </div>
             </div>
         </div>
+
 
 
 

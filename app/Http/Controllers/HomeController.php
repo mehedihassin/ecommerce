@@ -21,12 +21,15 @@ class HomeController extends Controller
 
     public function home()
     {
+        $categoris = Categori::all();
+
+        $products = Product::paginate(3);
         if (Auth::id()) {
 
             $usertype = Auth::user()->usertype;
 
             if ($usertype == 'user') {
-                return view('dashboard');
+                return view('dashboard', compact('products', 'categoris'));
             } else if ($usertype == 'admin') {
                 return view('admin.home');
             } else {

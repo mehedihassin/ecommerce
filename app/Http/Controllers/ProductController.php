@@ -6,8 +6,10 @@ use Exception;
 use Image;
 use App\Models\Product;
 use App\Models\Categori;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use PDF;
 
 class ProductController extends Controller
 {
@@ -85,5 +87,43 @@ class ProductController extends Controller
         Image::make($image)->resize(634, 792)->save($pathToUpload . $file_name);
 
         return $file_name;
+    }
+
+    public function order_list()
+    {
+        $orders = Order::all();
+
+        return view('backend.layouts.product-crud.orderList', compact('orders'));
+    }
+
+    public function orderd($id)
+    {
+
+        $order = Order::find($id);
+        $order->delevery_status = 'Deleverd';
+        $order->save();
+        return redirect()->back();
+    }
+
+    public function print_pdf($id)
+    {
+        $orders = Order::find($id);
+
+        $pdf = PDF::loadView('backend.layouts.product-crud.pdf', compact('orders'));
+        return $pdf->download('order details.pdf');
+    }
+
+    public function search_product(Request $request)
+
+    {
+        $searchText = $request->search;
+
+        $orders = Order::where('name', 'LIKE', "%$searchText%")->get();
+        return view('backend.layouts.product-crud.orderList', compact('orders'));
+    }
+
+    public function dashboard_view()
+    {
+        return view('admin.dashboard_view');
     }
 }

@@ -21,16 +21,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-// home crud rout
+//fontend home crud route
 Route::group(['prefix'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/home', [HomeController::class, 'home'])->name('home');
@@ -42,6 +42,10 @@ Route::group(['prefix'], function () {
 Route::group(['prefix'], function () {
 
     Route::get('/cash_delevery', [OrderController::class, 'cash_delevery'])->name('cash_delevery');
+
+    // this code for payment to card
+    Route::get('/stripe/{totalPrice}', [OrderController::class, 'stripe'])->name('stripe');
+    Route::post('stripe', [OrderController::class, 'stripePost'])->name('stripe.post');
 });
 
 
@@ -73,7 +77,19 @@ Route::group(['prefix'], function () {
     Route::get('/product-edit/{id}', [ProductController::class, 'edit'])->middleware('auth')->name('product_edit');
     Route::post('/product-update/{id}', [ProductController::class, 'update'])->middleware('auth')->name('product_update');
     Route::get('/product-delete/{id}', [ProductController::class, 'delete'])->middleware('auth')->name('product_delete');
+
+    // admin show order list route
+    Route::get('/order_list', [ProductController::class, 'order_list'])->name('order_list');
+    Route::get('/orderd/{id}', [ProductController::class, 'orderd'])->name('orderd_list');
+    Route::get('/print_pdf/{id}', [ProductController::class, 'print_pdf'])->name('print_pdf');
+    Route::get('/search_product', [ProductController::class, 'search_product'])->name('search_product');
+
+    //dashboard view
+
+    Route::get('/dashboard_view', [ProductController::class, 'dashboard_view'])->name('dashboard_view');
 });
+
+
 
 
 
