@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('categoris', function (Blueprint $table) {
-            $table->string('image')->nullable();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable();
+            $table->string('comment')->nullable();
+            $table->string('user_id')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('categoris', function (Blueprint $table) {
-            $table->string('image')->nullable();
-        });
+        Schema::dropIfExists('comments');
     }
 };

@@ -33,6 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('show_cart') }}">Cart</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('order_view') }}">ORDER</a>
+                    </li>
 
                     <form class="form-inline">
                         <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">

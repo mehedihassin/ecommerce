@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
+use PDF;
 use Image;
+use Exception;
+use App\Models\User;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Categori;
-use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use PDF;
 
 class ProductController extends Controller
 {
@@ -91,7 +92,7 @@ class ProductController extends Controller
 
     public function order_list()
     {
-        $orders = Order::all();
+        $orders = Order::paginate(5);
 
         return view('backend.layouts.product-crud.orderList', compact('orders'));
     }
@@ -124,6 +125,17 @@ class ProductController extends Controller
 
     public function dashboard_view()
     {
-        return view('admin.dashboard_view');
+        $total_product = Product::all()->count();
+        $total_order = Order::all()->count();
+        $total_customer = User::all()->count();
+        $order = Order::all();
+        $total_revenue = 0;
+        foreach ($order as $order) {
+            $total_revenue = $total_revenue + $order->price;
+        }
+        $total_deleverd = Order::where('delevery_status', '=', 'deleverd')->get()->count();
+        $total_processing = Order::where('delevery_status', '=', 'processing')->get()->count();
+
+        return view('admin.dashboard_view', compact('total_product', 'total_order', 'total_customer', 'total_revenue', 'total_deleverd', 'total_processing'));
     }
 }

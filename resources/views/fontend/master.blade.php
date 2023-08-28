@@ -73,6 +73,25 @@
     @yield('container')
     <!-- end product section -->
 
+
+    {{-- start comment section --}}
+
+
+
+
+    {{-- end comment --}}
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- subscribe section -->
     <section class="subscribe_section">
         <div class="container-fuild">
@@ -195,9 +214,13 @@
     </section>
     <!-- end client section -->
 
-    @include('fontend.footer')
-    <!-- footer start -->
 
+
+
+
+
+    <!-- footer start -->
+    @include('fontend.footer')
     <!-- footer end -->
     <div class="cpy_">
         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
@@ -206,6 +229,17 @@
 
         </p>
     </div>
+
+    <script>
+        function replay(caller) {
+            $('#replayDiv').insertAfter($(caller));
+            $('#replayDiv').show();
+        }
+    </script>
+
+
+
+
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->

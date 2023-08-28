@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Categori;
+use App\Models\Comment;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,11 +29,15 @@ class HomeController extends Controller
         if (Auth::id()) {
 
             $usertype = Auth::user()->usertype;
+            $allComments = Comment::all();
+
+
 
             if ($usertype == 'user') {
-                return view('dashboard', compact('products', 'categoris'));
+                return view('dashboard', compact('products', 'categoris', 'allComments'));
             } else if ($usertype == 'admin') {
-                return view('admin.home');
+
+                return view('admin.home',);
             } else {
                 return redirect()->back();
             }
@@ -92,4 +98,45 @@ class HomeController extends Controller
         $removeCart->delete();
         return redirect()->back();
     }
+
+    public function order_view()
+    {
+        if (Auth::id()) {
+            $user = Auth::user();
+            $userId = $user->id;
+            $orders = Order::where('user_id', '=', $userId)->get();
+
+            return view('fontend.order_view', compact('orders'));
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    public function cancle_order($id)
+    {
+
+        $order = Order::find($id);
+
+        $order->delevery_status = 'you cancled your Order';
+        $order->save();
+        return redirect()->back();
+    }
+
+
+    // public function add_comment(Request $request)
+
+    // {
+    //     if (Auth::id()) {
+    //         $comment = new Comment;
+    //         $comment->name = Auth::user()->name;
+    //         $comment->user_id = Auth::user()->id;
+    //         $comment->comment = $request->comment;
+
+    //         $comment->save();
+
+    //         return redirect()->back();
+    //     } else {
+    //         return redirect()->route('login');
+    //     }
+    // }
 }

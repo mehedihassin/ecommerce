@@ -38,6 +38,11 @@ Route::group(['prefix'], function () {
     Route::post('/add_to_cart/{id}', [HomeController::class, 'add_to_cart'])->name('add_to_cart');
     Route::get('/show_cart', [HomeController::class, 'show_cart'])->name('show_cart');
     Route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart'])->name('remove_cart');
+    Route::get('/order_view', [HomeController::class, 'order_view'])->name('order_view');
+    Route::get('/cancle_order/{id}', [HomeController::class, 'cancle_order'])->name('cancle_order');
+
+    // comment section
+    // Route::post('/add_comment', [HomeController::class, 'add_comment'])->name('add_comment');
 });
 Route::group(['prefix'], function () {
 

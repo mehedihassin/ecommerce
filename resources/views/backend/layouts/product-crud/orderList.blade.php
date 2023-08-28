@@ -4,7 +4,7 @@
     <div class="content">
         <div class="card">
             <div class="card-title ">
-                <h3 class="text-center text-info">Order LIst</h3>
+                <h3 class="text-center text-info fw-bold">ORDER LIST</h3>
             </div>
 
             <div class="card-body">
@@ -87,4 +87,9 @@
             </div>
         </div>
     </div>
+    <span style="padding-top: 20px">
+        {!! $orders->withQueryString()->links('pagination::bootstrap-5') !!}
+
+
+    </span>
 @endsection
