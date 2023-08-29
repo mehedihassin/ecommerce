@@ -4,7 +4,7 @@
     <div class="container">
         <!-- Revenue Card -->
         <div class="pagetitle">
-            <h1 class="text-center text-danger fw-bold mt-5 mb-5">Dashboard for All </h1>
+            <h1 class="text-center text-danger fs-1 fw-bold mt-5 mb-5">Your Dashboard Pannel </h1>
             <nav>
 
             </nav>

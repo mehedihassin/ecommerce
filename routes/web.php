@@ -41,6 +41,10 @@ Route::group(['prefix'], function () {
     Route::get('/order_view', [HomeController::class, 'order_view'])->name('order_view');
     Route::get('/cancle_order/{id}', [HomeController::class, 'cancle_order'])->name('cancle_order');
 
+    // shipping adress
+    Route::get('/shiping_address', [HomeController::class, 'shiping_address'])->name('shiping_address');
+    Route::post('/customer_store', [HomeController::class, 'customer_store'])->name('customer_store');
+
     // comment section
     // Route::post('/add_comment', [HomeController::class, 'add_comment'])->name('add_comment');
 });

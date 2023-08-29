@@ -1,8 +1,17 @@
+{{-- bootsrap cdn --}}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+{{-- font awesome cdn --}}
+<script src="https://kit.fontawesome.com/72826e8494.js" crossorigin="anonymous"></script>
+
 <header class="header_section">
     <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="{{ route('index') }}"><img width="250" src="images/logo.png"
-                    alt="#" /></a>
+            <a class="navbar-brand" href="{{ route('index') }}">
+                <h1 class="fs-4 fw-bold text-danger">M E H E D i <span><i
+                            class="fa-solid fa-dumpster-fire text-info"></i></span> M
+                    A R T</h1>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class=""> </span>

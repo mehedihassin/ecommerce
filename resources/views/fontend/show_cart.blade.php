@@ -28,12 +28,12 @@
 
 <body>
 
-    @if (session()->has('message'))
+    {{-- @if (session()->has('message'))
         <div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
             {{ session()->get('message') }}
         </div>
-    @endif
+    @endif --}}
 
 
     <div class="hero_area">
@@ -103,7 +103,7 @@
             <div class="text text-center mt-5">
                 <h4>Prceed to Order</h4>
                 <i class=" text-success fa-solid fa-truck"></i>
-                <a href="{{ route('cash_delevery') }}" class="btn btn-sm btn-danger">Cash On
+                <a href="{{ route('shiping_address') }}" class="btn btn-sm btn-danger">Cash On
                     Delevery</a>
                 <i class="text-primary fa-solid fa-credit-card"></i>
                 <a href="{{ route('stripe', ['totalPrice' => $totalPrice]) }}" class="btn btn-sm btn-danger">Pay Using
@@ -123,8 +123,7 @@
     @include('fontend.footer')
     <!-- footer end -->
     <div class="cpy_">
-        <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html
-                Templates</a><br>
+        <p class="mx-auto">© 2021 All Rights Reserved By Md Mehedi Hasan</a><br>
 
             Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
 

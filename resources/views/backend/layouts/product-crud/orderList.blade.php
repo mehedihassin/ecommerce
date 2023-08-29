@@ -2,9 +2,11 @@
 
 @section('content')
     <div class="content">
-        <div class="card">
-            <div class="card-title ">
-                <h3 class="text-center text-info fw-bold">ORDER LIST</h3>
+        <div class="card shadow">
+            <div class="card-title text-center fw-bold fs-2">
+                <h1><i class="fa-solid fa-shop"></i></h1><br>
+
+                ORDER LIST
             </div>
 
             <div class="card-body">
@@ -16,10 +18,10 @@
                     </div>
 
                 </form>
-                <table class="table">
+                <table class="table table-bordered table-primary">
                     <thead>
                         <tr class=" table table-dark">
-                            <th scope="col">#</th>
+                            <th scope="col">Ser No.</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>

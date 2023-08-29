@@ -4,7 +4,11 @@
             <div class="col-md-4">
                 <div class="full">
                     <div class="logo_footer">
-                        <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
+                        <a href="#">
+                            <h1 class="fs-4 fw-bold text-danger">M E H E D i <span><i
+                                        class="fa-solid fa-dumpster-fire text-info"></i></span> M
+                                A R T</h1>
+                        </a>
                     </div>
                     <div class="information_f">
                         <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>

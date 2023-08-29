@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
-use App\Models\Categori;
-use App\Models\Comment;
 use App\Models\Order;
+use App\Models\Comment;
 use App\Models\Product;
+use App\Models\Categori;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -121,6 +122,32 @@ class HomeController extends Controller
         $order->save();
         return redirect()->back();
     }
+
+
+    public function shiping_address()
+    {
+        return view('fontend.shiping_address');
+    }
+
+    public function customer_store(Request $request)
+    {
+        $customer = $request->all();
+        Customer::create($customer);
+        return view('fontend.thank_you');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // public function add_comment(Request $request)

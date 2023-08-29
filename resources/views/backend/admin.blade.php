@@ -13,6 +13,13 @@
     <link href="{{ asset('ui/backend') }}/assets/img/favicon.png" rel="icon">
     <link href="{{ asset('ui/backend') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+    {{-- bootstrap cdn --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    {{-- font awesome cdn --}}
+    <script src="https://kit.fontawesome.com/72826e8494.js" crossorigin="anonymous"></script>
+
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link

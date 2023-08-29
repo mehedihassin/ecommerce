@@ -1,9 +1,14 @@
+{{-- font awesome cdn --}}
+<script src="https://kit.fontawesome.com/72826e8494.js" crossorigin="anonymous"></script>
+
+
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-            <img src="{{ asset('ui/backend') }}/assets/img/logo.png" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
+        <a href="{{ route('index') }}" class="logo d-flex align-items-center">
+            <h1 class="fs-4 fw-bold text-danger">M E H E D i <span><i
+                        class="fa-solid fa-dumpster-fire text-info"></i></span> M
+                A R T</h1>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -172,9 +177,8 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{ asset('ui/backend') }}/assets/img/profile-img.jpg" alt="Profile"
-                        class="rounded-circle">
-                    <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    <img src="{{ asset('ui/backend') }}/assets/img/mmm.jpg" alt="Profile" class="rounded-circle">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">Mehedi</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">

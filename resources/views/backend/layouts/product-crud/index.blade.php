@@ -3,11 +3,15 @@
 @section('content')
     <div class="content">
         <div class="card">
-            <div class="card-title">Product List</div>
+            <div class="card-title text-center fw-bold fs-2">
+                <h1><i class="fa-brands fa-shopify text-info "></i></h1><br>
+
+                CATEGORY CREATE PAGE
+            </div>
             <div class="card-body">
-                <table class="table">
+                <table class="table table-bordered border-dark">
                     <thead>
-                        <tr class=" table table-dark">
+                        <tr class=" table table-success text-center">
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
@@ -23,7 +27,7 @@
                             $i = 1;
                         @endphp
                         @foreach ($products as $product)
-                            <tr>
+                            <tr class="text-center">
                                 <th scope="row">{{ $i++ }}</th>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>

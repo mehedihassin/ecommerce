@@ -39,7 +39,7 @@
         <div class="container">
             <div class="cart">
                 <div class="cart-title">
-                    <h1 class="text-center fw-bold text-info mt-5 mb-4">YOUR ORDER TABLE</h1>
+                    <h1 class="text-center fw-bold text-info mt-5 mb-4 ">YOUR ORDER TABLE</h1>
                 </div>
                 <div class="cart-body">
                     <table class="table table-bordered ">

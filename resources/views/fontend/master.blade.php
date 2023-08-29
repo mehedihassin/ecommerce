@@ -45,7 +45,7 @@
         <div class="container">
             <div class="box">
                 <div class="arrival_bg_box">
-                    <img src="images/arrival-bg.png" alt="">
+                    <img src="images/slider.jpg" alt="">
                 </div>
                 <div class="row">
                     <div class="col-md-6 ml-auto">
@@ -223,9 +223,7 @@
     @include('fontend.footer')
     <!-- footer end -->
     <div class="cpy_">
-        <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+        <p class="mx-auto">© 2023 All Rights Reserved By M E H E D I H A S A N</a>
 
         </p>
     </div>
